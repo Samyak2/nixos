@@ -46,6 +46,7 @@
 
 	./nvim-global.nix
     ./gpg.nix
+    ./ssh.nix
       ];
     };
   };
