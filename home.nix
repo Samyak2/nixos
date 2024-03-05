@@ -82,7 +82,7 @@
       extraPackages = with pkgs; [ gcc go ];
     };
 
-    home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ./nvim-config;
+    home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink (builtins.toString ./nvim-config);
 
     programs.bash = {
       enable = true;
