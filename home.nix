@@ -5,6 +5,9 @@
     home.homeDirectory = "/home/samyak";
 
     home.packages = with pkgs; [
+      # for signing git commits
+      gnupg
+
       # utils
       ripgrep # recursively searches directories for a regex pattern
       jq # A lightweight and flexible command-line JSON processor
@@ -14,6 +17,11 @@
       enable = true;
       userName = "Samyak S Sarnayak";
       userEmail = "samyak201@gmail.com";
+
+      signing = {
+        key = null;
+        signByDefault = true;
+      };
 
       extraConfig = {
         commit = {
@@ -75,6 +83,10 @@
     };
 
     home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ./nvim-config;
+
+    programs.bash = {
+      enable = true;
+    };
 
     # This value determines the home Manager release that your
     # configuration is compatible with. This helps avoid breakage

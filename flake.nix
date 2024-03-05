@@ -41,6 +41,7 @@
 	}
 
 	./nvim-global.nix
+    ./gpg.nix
       ];
     };
   };
