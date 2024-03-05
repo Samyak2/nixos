@@ -14,6 +14,27 @@
       enable = true;
       userName = "Samyak S Sarnayak";
       userEmail = "samyak201@gmail.com";
+
+      extraConfig = {
+        commit = {
+          verbose = true;
+        };
+        pull = {
+          ff = "only";
+        };
+        push = {
+          autoSetupRemote = true;
+        };
+        init = {
+          defaultBranch = "main";
+        };
+      };
+
+      difftastic = {
+        enable = true;
+        background = "dark";
+        display = "side-by-side-show-both";
+      };
     };
 
     programs.firefox = {
