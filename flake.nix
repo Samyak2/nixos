@@ -18,6 +18,12 @@
       url = "github:Samyak2/nvim-config";
       flake = false;
     };
+
+    plasma-manager = {
+      url = "github:pjones/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: let
@@ -41,7 +47,7 @@
 
 	  home-manager.users.samyak = import ./home.nix;
 
-	  home-manager.extraSpecialArgs = { inherit (inputs) nvim-config; };
+	  home-manager.extraSpecialArgs = { inherit (inputs) nvim-config plasma-manager; };
 	}
 
 	./nvim-global.nix

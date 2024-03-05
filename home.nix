@@ -1,5 +1,7 @@
- {config, pkgs, nvim-config, ... }:
+ {config, pkgs, nvim-config, plasma-manager, ... }:
  {
+    imports = [plasma-manager.homeManagerModules.plasma-manager ./plasma.nix];
+
     home.username = "samyak";
     home.homeDirectory = "/home/samyak";
 
