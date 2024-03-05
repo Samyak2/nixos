@@ -50,7 +50,7 @@
       enable = true;
       defaultEditor = true;
 
-      extraPackages = [ pkgs.gcc ];
+      extraPackages = with pkgs; [ gcc, go ];
     };
 
     home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ./nvim-config;

@@ -18,7 +18,6 @@
   outputs = { self, nixpkgs, home-manager, ... }@inputs: let
     inherit (self) outputs;
   in {
-    # Please replace my-nixos with your hostname
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs outputs;};
       system = "x86_64-linux";
