@@ -13,6 +13,11 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nvim-config = {
+      url = "github:Samyak2/nvim-config";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: let
@@ -34,10 +39,9 @@
 	  home-manager.useGlobalPkgs = true;
 	  home-manager.useUserPackages = true;
 
-	  # TODO replace ryan with your own username
 	  home-manager.users.samyak = import ./home.nix;
 
-	  # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+	  home-manager.extraSpecialArgs = { inherit (inputs) nvim-config; };
 	}
 
 	./nvim-global.nix

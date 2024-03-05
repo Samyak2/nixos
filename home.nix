@@ -1,5 +1,4 @@
- {config, pkgs, ... }:
-
+ {config, pkgs, nvim-config, ... }:
  {
     home.username = "samyak";
     home.homeDirectory = "/home/samyak";
@@ -82,7 +81,7 @@
       extraPackages = with pkgs; [ gcc go ];
     };
 
-    home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink (builtins.toString ./nvim-config);
+    home.file.".config/nvim".source = "${nvim-config}";
 
     programs.bash = {
       enable = true;
