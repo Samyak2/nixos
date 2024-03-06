@@ -7,6 +7,10 @@ echo "NixOS Rebuilding..."
 
 cp /etc/nixos/hardware-configuration.nix hardware-configuration.nix
 
+nix flake lock --update-input nvim-config
+
+alejandra . -e hardware-configuration.nix
+
 git add .
 
 sudo nixos-rebuild switch --flake .
