@@ -47,7 +47,9 @@
 
 	  home-manager.users.samyak = import ./home.nix;
 
-	  home-manager.extraSpecialArgs = { inherit (inputs) nvim-config plasma-manager; };
+	  home-manager.extraSpecialArgs = { inherit inputs; };
+
+      home-manager.sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
 	}
 
 	./nvim-global.nix

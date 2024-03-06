@@ -1,6 +1,6 @@
- {config, pkgs, nvim-config, plasma-manager, ... }:
+ {config, pkgs, inputs, ... }:
  {
-    imports = [plasma-manager.homeManagerModules.plasma-manager ./plasma.nix];
+    imports = [./plasma.nix];
 
     home.username = "samyak";
     home.homeDirectory = "/home/samyak";
@@ -83,7 +83,7 @@
       extraPackages = with pkgs; [ gcc go ];
     };
 
-    home.file.".config/nvim".source = "${nvim-config}";
+    home.file.".config/nvim".source = "${inputs.nvim-config}";
 
     programs.bash = {
       enable = true;

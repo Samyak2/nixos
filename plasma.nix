@@ -1,5 +1,7 @@
 {...}: {
   programs.plasma = {
+    enable = true;
+
     workspace = {
       clickItemTo = "select";
       # tooltipDelay = 5;
