@@ -13,8 +13,8 @@
     # kwin.titlebarButtons = {
     #  left = [ "on-all-desktops" "keep-above-windows" ];
     #  right = [ "help" "minimize" "maximize" "close" ]
-   # };
-    
+    # };
+
     # spectacle.shortcuts = {
     #   captureActiveWindow = "Meta+Print";
     #   captureCurrentMonitor = "Print";

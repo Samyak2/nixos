@@ -26,7 +26,12 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: let
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    ...
+  } @ inputs: let
     inherit (self) outputs;
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -37,24 +42,24 @@
         # so the old configuration file still takes effect
         ./configuration.nix
 
-	# make home-manager as a module of nixos
-	# so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
-	home-manager.nixosModules.home-manager
+        # make home-manager as a module of nixos
+        # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
+        home-manager.nixosModules.home-manager
 
-	{
-	  home-manager.useGlobalPkgs = true;
-	  home-manager.useUserPackages = true;
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
 
-	  home-manager.users.samyak = import ./home.nix;
+          home-manager.users.samyak = import ./home.nix;
 
-	  home-manager.extraSpecialArgs = { inherit inputs; };
+          home-manager.extraSpecialArgs = {inherit inputs;};
 
-      home-manager.sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
-	}
+          home-manager.sharedModules = [inputs.plasma-manager.homeManagerModules.plasma-manager];
+        }
 
-	./nvim-global.nix
-    ./gpg.nix
-    ./ssh.nix
+        ./nvim-global.nix
+        ./gpg.nix
+        ./ssh.nix
       ];
     };
   };
