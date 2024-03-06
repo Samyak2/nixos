@@ -95,8 +95,11 @@
 
     extraPackages = with pkgs; [
       gcc # for installing TS grammars
+
+      # language servers
       efm-langserver
-      nil
+      nil # nix language server
+      lua-language-server
     ];
   };
 
