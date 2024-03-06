@@ -89,7 +89,10 @@
       enable = true;
       defaultEditor = true;
 
-      extraPackages = with pkgs; [ gcc go ];
+      extraPackages = with pkgs; [
+        gcc # for installing TS grammars
+        efm-langserver
+      ];
     };
 
     home.file.".config/nvim".source = "${inputs.nvim-config}";
