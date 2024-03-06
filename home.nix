@@ -96,6 +96,7 @@
     extraPackages = with pkgs; [
       gcc # for installing TS grammars
       efm-langserver
+      nil
     ];
   };
 
