@@ -12,11 +12,13 @@
       # utils
       ripgrep # recursively searches directories for a regex pattern
       jq # A lightweight and flexible command-line JSON processor
-
-      # better shell wherever you go
-      direnv
-      nix-direnv
     ];
+
+    programs.direnv = {
+      enable = true;
+      enableBashIntegration = true;
+      nix-direnv.enable = true;
+    };
 
     programs.git = {
       enable = true;
