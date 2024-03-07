@@ -81,6 +81,8 @@ in {
           ublock-origin
 
           bitwarden
+
+          sidebery
         ];
 
         settings = {
