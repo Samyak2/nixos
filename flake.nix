@@ -28,6 +28,11 @@
     nur = {
       url = "github:nix-community/NUR";
     };
+
+    firefox-csshacks = {
+      url = "github:MrOtherGuy/firefox-csshacks";
+      flake = false;
+    };
   };
 
   outputs = {

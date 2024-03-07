@@ -85,6 +85,29 @@ in {
           sidebery
         ];
 
+        userChrome = ''
+          /* sidebery stuff */
+          ${builtins.readFile "${inputs.firefox-csshacks}/chrome/window_control_placeholder_support.css"}
+          ${builtins.readFile "${inputs.firefox-csshacks}/chrome/hide_tabs_toolbar.css"}
+
+          /**
+           * Decrease size of the sidebar header
+           */
+          #sidebar-header {
+            font-size: 1.2em !important;
+            padding: 2px 6px 2px 3px !important;
+          }
+          #sidebar-header #sidebar-close {
+            padding: 3px !important;
+          }
+          #sidebar-header #sidebar-close .toolbarbutton-icon {
+            width: 14px !important;
+            height: 14px !important;
+            opacity: 0.6 !important;
+          }
+          /* sidebery stuff end */
+        '';
+
         settings = {
           "browser.ctrlTab.recentlyUsedOrder" = true;
           "browser.ctrlTab.sortByRecentlyUsed" = true;
