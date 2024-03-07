@@ -1,10 +1,16 @@
 {
   config,
   pkgs,
+  lib,
   inputs,
   ...
-}: {
-  imports = [./plasma.nix];
+}: let
+  nur-hm-modules = inputs.nur.hmModules.nur;
+in {
+  imports = [
+    ./plasma.nix
+    nur-hm-modules
+  ];
 
   home.username = "samyak";
   home.homeDirectory = "/home/samyak";
@@ -66,6 +72,8 @@
         id = 0;
         isDefault = true;
         name = "Samyak";
+
+        extensions = [];
 
         settings = {
           "browser.ctrlTab.recentlyUsedOrder" = true;
