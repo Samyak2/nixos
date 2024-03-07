@@ -66,11 +66,7 @@
           home-manager.sharedModules = [inputs.plasma-manager.homeManagerModules.plasma-manager];
         }
 
-        {
-          # used by programs.zsh in home-manager
-          environment.pathsToLink = ["/share/zsh"];
-        }
-
+        ./zsh-global.nix
         ./nvim-global.nix
         ./gpg.nix
         ./ssh.nix
