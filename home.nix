@@ -109,6 +109,9 @@ in {
         '';
 
         settings = {
+          # enable userChrome.css
+          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+
           "browser.ctrlTab.recentlyUsedOrder" = true;
           "browser.ctrlTab.sortByRecentlyUsed" = true;
           "general.autoScroll" = true;
