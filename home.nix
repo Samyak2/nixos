@@ -1,15 +1,19 @@
 {
-  config,
+  # config,
   pkgs,
-  lib,
+  # lib,
   inputs,
   ...
 }: let
-  nur-hm-modules = inputs.nur.hmModules.nur;
+  nur-no-pkgs = import inputs.nur {
+    pkgs = pkgs;
+    nurpkgs = pkgs;
+  };
 in {
   imports = [
     ./plasma.nix
-    nur-hm-modules
+
+    {nixpkgs.overlays = [inputs.nur.overlay];}
   ];
 
   home.username = "samyak";
@@ -73,7 +77,11 @@ in {
         isDefault = true;
         name = "Samyak";
 
-        extensions = [];
+        extensions = with nur-no-pkgs.repos.rycee.firefox-addons; [
+          ublock-origin
+
+          bitwarden
+        ];
 
         settings = {
           "browser.ctrlTab.recentlyUsedOrder" = true;
