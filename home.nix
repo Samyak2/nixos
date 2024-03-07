@@ -11,6 +11,7 @@
     {nixpkgs.overlays = [inputs.nur.overlay];}
 
     ./firefox.nix
+    ./zsh.nix
   ];
 
   home.username = "samyak";
