@@ -67,7 +67,7 @@
         }
 
         {
-          # This fixes weird cursor in firefox (probably?)
+          # This fixes weird cursor in firefox
           programs.dconf.enable = true;
         }
 
