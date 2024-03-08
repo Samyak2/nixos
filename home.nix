@@ -95,6 +95,8 @@
 
       config.hide_tab_bar_if_only_one_tab = true
 
+      config.front_end = "Software"
+
       return config
     '';
   };
