@@ -85,6 +85,10 @@
 
   home.file.".config/nvim".source = "${inputs.nvim-config}";
 
+  programs.alacritty = {
+    enable = true;
+  };
+
   programs.wezterm = {
     enable = true;
     enableBashIntegration = true;
