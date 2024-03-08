@@ -87,6 +87,11 @@
 
   programs.alacritty = {
     enable = true;
+
+    settings = {
+      opacity = 0.9;
+      blur = true;
+    };
   };
 
   programs.wezterm = {
