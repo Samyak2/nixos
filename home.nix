@@ -95,8 +95,6 @@
 
       config.hide_tab_bar_if_only_one_tab = true
 
-      config.enable_wayland = true
-
       return config
     '';
   };
