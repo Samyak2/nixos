@@ -1,6 +1,7 @@
 {
   # config,
   pkgs,
+  pkgs-unstable,
   # lib,
   inputs,
   ...
@@ -87,10 +88,13 @@
 
   programs.alacritty = {
     enable = true;
+    package = pkgs-unstable.alacritty;
 
     settings = {
-      opacity = 0.9;
-      blur = true;
+      window = {
+        opacity = 0.7;
+        blur = true;
+      };
     };
   };
 
