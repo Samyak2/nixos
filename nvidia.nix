@@ -25,7 +25,7 @@
     # Enable this if you have graphical corruption issues or application crashes after waking
     # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead
     # of just the bare essentials.
-    powerManagement.enable = false;
+    powerManagement.enable = true;
 
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
@@ -49,6 +49,8 @@
   };
 
   # source: https://github.com/TLATER/dotfiles/blob/f60413d2efe1a603fc260280550bb9de858beedb/nixos-config/hosts/yui/nvidia/default.nix#L72C3-L80C5
+  # and: https://github.com/TLATER/dotfiles/blob/e633196dca42d96f42f9aa9016fa8d307959232f/nixos-config/yui/nvidia.nix#L33
+  # also see ./firefox.nix -> settings
   environment.variables = {
     # Required to run the correct GBM backend for nvidia GPUs on wayland
     GBM_BACKEND = "nvidia-drm";

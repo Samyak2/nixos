@@ -53,6 +53,10 @@ in {
 
           # enable hardware video decoding on gpu (this is not needed for intel gpus)
           "media.ffmpeg.vaapi.enabled" = true;
+          "media.rdd-ffmpeg.enabled" = true;
+          # this one requires hardware.nvidia.powerManagement.enable = true;
+          # https://github.com/elFarto/nvidia-vaapi-driver/issues/182#issuecomment-1466171392
+          "widget.dmabuf.force-enabled" = true;
 
           "browser.ctrlTab.recentlyUsedOrder" = true;
           "browser.ctrlTab.sortByRecentlyUsed" = true;
