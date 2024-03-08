@@ -12,6 +12,7 @@
 
     ./firefox.nix
     ./zsh.nix
+    ./zellij.nix
   ];
 
   home.username = "samyak";
