@@ -51,6 +51,9 @@ in {
           # enable userChrome.css
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
 
+          # enable hardware video decoding on gpu (this is not needed for intel gpus)
+          "media.ffmpeg.vaapi.enabled" = true;
+
           "browser.ctrlTab.recentlyUsedOrder" = true;
           "browser.ctrlTab.sortByRecentlyUsed" = true;
           "general.autoScroll" = true;
