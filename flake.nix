@@ -70,6 +70,7 @@
         ./nvim-global.nix
         ./gpg.nix
         ./ssh.nix
+        ./nvidia.nix
       ];
     };
   };
