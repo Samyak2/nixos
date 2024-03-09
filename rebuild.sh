@@ -23,5 +23,7 @@ git restore --staged hardware-configuration.nix
 
 git --no-pager diff --staged
 
-git commit -m "nixos gen: $gen_only\n\n$gen"
+git commit -m "nixos gen: $gen_only
+
+$gen"
 git commit --amend
