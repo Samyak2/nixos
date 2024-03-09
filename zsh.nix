@@ -1,4 +1,4 @@
-{...}: {
+{pkgs-unstable, ...}: {
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -35,6 +35,14 @@
     syntaxHighlighting = {
       enable = true;
     };
+
+    plugins = [
+      {
+        name = "vi-mode";
+        src = pkgs-unstable.zsh-vi-mode;
+        file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
+      }
+    ];
   };
 
   programs.starship = {
