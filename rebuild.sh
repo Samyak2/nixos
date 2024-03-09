@@ -17,9 +17,11 @@ sudo nixos-rebuild switch --flake .
 
 gen=$(nixos-rebuild list-generations | grep current)
 
+gen_only=$(echo $gen | cut -d " " -f 1)
+
 git restore --staged hardware-configuration.nix
 
 git --no-pager diff --staged
 
-git commit -m "nixos gen: $gen"
+git commit -m "nixos gen: $gen_only\n\n$gen"
 git commit --amend
