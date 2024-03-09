@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
-git diff
+git --no-pager diff
 
 echo "NixOS Rebuilding..."
 
@@ -19,7 +19,7 @@ gen=$(nixos-rebuild list-generations | grep current)
 
 git restore --staged hardware-configuration.nix
 
-git diff --staged
+git --no-pager diff --staged
 
 git commit -m "nixos gen: $gen"
 git commit --amend
