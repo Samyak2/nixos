@@ -5,7 +5,7 @@
 
     fontconfig = {
       defaultFonts = {
-        monospace = ["Overpass"];
+        monospace = ["Overpass Mono"];
       };
     };
   };
