@@ -98,6 +98,12 @@
         decorations = "None";
         startup_mode = "Maximized";
       };
+
+      font = {
+        normal = {
+          family = "Overpass";
+        };
+      };
     };
   };
 
