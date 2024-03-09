@@ -1,7 +1,6 @@
 {pkgs-unstable, ...}: {
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
 
     # needs `environment.pathsToLink = [ "/share/zsh" ]` in nixos config
     enableCompletion = true;
