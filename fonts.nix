@@ -3,10 +3,10 @@
     packages = [pkgs.overpass];
     fontDir.enable = true;
 
-    # fontconfig = {
-    #   defaultFonts = {
-    #     monospace = ["Overpass"];
-    #   };
-    # };
+    fontconfig = {
+      defaultFonts = {
+        monospace = ["Overpass"];
+      };
+    };
   };
 }

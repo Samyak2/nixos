@@ -100,9 +100,7 @@
       };
 
       font = {
-        normal = {
-          family = "Overpass";
-        };
+        size = 13;
       };
     };
   };
