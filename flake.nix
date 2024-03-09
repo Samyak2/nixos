@@ -74,11 +74,8 @@
             home-manager.sharedModules = [inputs.plasma-manager.homeManagerModules.plasma-manager];
           }
 
-          {
-            # This fixes weird cursor in firefox
-            programs.dconf.enable = true;
-          }
-
+          ./kde.nix
+          ./fonts.nix
           ./zsh-global.nix
           ./nvim-global.nix
           ./gpg.nix
