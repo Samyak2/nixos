@@ -94,7 +94,9 @@
       window = {
         opacity = 0.7;
         blur = true;
+
         decorations = "None";
+        startup_mode = "Maximized";
       };
     };
   };

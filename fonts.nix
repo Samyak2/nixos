@@ -1,3 +1,6 @@
 {pkgs, ...}: {
-  fonts.packages = [pkgs.overpass];
+  fonts = {
+    packages = [pkgs.overpass];
+    fontDir.enable = true;
+  };
 }
