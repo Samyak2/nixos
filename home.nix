@@ -19,7 +19,7 @@
   home.username = "samyak";
   home.homeDirectory = "/home/samyak";
 
-  home.packages = with pkgs; [
+  home.packages = with pkgs-unstable; [
     # for signing git commits
     gnupg
 
@@ -74,7 +74,7 @@
     enable = true;
     defaultEditor = true;
 
-    extraPackages = with pkgs; [
+    extraPackages = with pkgs-unstable; [
       gcc # for installing TS grammars
 
       # language servers
@@ -96,22 +96,6 @@
         blur = true;
       };
     };
-  };
-
-  programs.wezterm = {
-    enable = true;
-    enableBashIntegration = true;
-    extraConfig = ''
-      local wezterm = require 'wezterm'
-
-      local config = wezterm.config_builder()
-
-      config.hide_tab_bar_if_only_one_tab = true
-
-      config.front_end = "Software"
-
-      return config
-    '';
   };
 
   programs.bash = {
