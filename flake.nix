@@ -75,6 +75,7 @@
           }
 
           ./bluetooth.nix
+          ./pipewire.nix
           ./kde.nix
           ./fonts.nix
           ./zsh-global.nix
