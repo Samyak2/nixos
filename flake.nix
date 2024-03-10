@@ -74,6 +74,7 @@
             home-manager.sharedModules = [inputs.plasma-manager.homeManagerModules.plasma-manager];
           }
 
+          ./bluetooth.nix
           ./kde.nix
           ./fonts.nix
           ./zsh-global.nix
