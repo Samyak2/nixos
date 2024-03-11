@@ -5,4 +5,6 @@
 
   # This fixes weird cursor in firefox
   programs.dconf.enable = true;
+
+  programs.partition-manager.enable = true;
 }

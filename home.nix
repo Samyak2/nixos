@@ -12,6 +12,7 @@
     {nixpkgs.overlays = [inputs.nur.overlay];}
 
     ./firefox.nix
+    ./obs.nix
     ./zsh.nix
     ./zellij.nix
   ];
