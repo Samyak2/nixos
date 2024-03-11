@@ -83,6 +83,7 @@
           ./gpg.nix
           ./ssh.nix
           ./nvidia.nix
+          ./steam.nix
         ];
       };
   };
