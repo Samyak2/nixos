@@ -24,10 +24,10 @@
     # for signing git commits
     gnupg
 
-    # utils
     ripgrep # recursively searches directories for a regex pattern
     jq # A lightweight and flexible command-line JSON processor
     bottom # nicer top
+    mob # remote mob programming
 
     # programming language utils
     alejandra # nix formatter
