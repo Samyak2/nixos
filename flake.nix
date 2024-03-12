@@ -55,9 +55,7 @@
         };
 
         modules = [
-          # Import the previous configuration.nix we used,
-          # so the old configuration file still takes effect
-          ./configuration.nix
+          ./nixos
 
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
@@ -67,23 +65,12 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.samyak = import ./home.nix;
+            home-manager.users.samyak = import ./home;
 
             home-manager.extraSpecialArgs = {inherit inputs pkgs-unstable;};
 
             home-manager.sharedModules = [inputs.plasma-manager.homeManagerModules.plasma-manager];
           }
-
-          ./bluetooth.nix
-          ./pipewire.nix
-          ./kde.nix
-          ./fonts.nix
-          ./zsh-global.nix
-          ./nvim-global.nix
-          ./gpg.nix
-          ./ssh.nix
-          ./nvidia.nix
-          ./steam.nix
         ];
       };
   };
