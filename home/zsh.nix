@@ -6,7 +6,7 @@
     enableCompletion = true;
 
     initExtra = ''
-      ${pkgs-unstable.nix-your-shell}/bin/any-nix-shell zsh | source /dev/stdin
+      ${pkgs-unstable.nix-your-shell}/bin/nix-your-shell zsh | source /dev/stdin
     '';
 
     history = {
