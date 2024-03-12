@@ -5,6 +5,10 @@
     # needs `environment.pathsToLink = [ "/share/zsh" ]` in nixos config
     enableCompletion = true;
 
+    initExtra = ''
+      ${pkgs-unstable.nix-your-shell} zsh | source /dev/stdin
+    '';
+
     history = {
       extended = true;
       save = 100000;
@@ -47,6 +51,7 @@
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
+    enableBashIntegration = false;
   };
 
   programs.fzf = {
