@@ -59,7 +59,7 @@
 
           {
             fileSystems."/mnt/e-drive" = {
-              device = "/dev/sda2";
+              device = "/dev/disk/by-uuid/2A828CFA828CCBAF";
               fsType = "ntfs-3g";
               # 1000 is the user id. how to ensure this is always correct?
               options = ["rw" "uid=1000"];
