@@ -57,6 +57,15 @@
         modules = [
           ./nixos
 
+          {
+            fileSystems."/mnt/e-drive" = {
+              device = "/dev/sda2";
+              fsType = "ntfs-3g";
+              # 1000 is the user id. how to ensure this is always correct?
+              options = ["rw" "uid=1000"];
+            };
+          }
+
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
