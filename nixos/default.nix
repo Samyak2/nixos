@@ -20,6 +20,7 @@
     ./ssh.nix
     ./nvidia.nix
     ./steam.nix
+    ./jellyfin.nix
 
     ./nix-settings.nix
 
