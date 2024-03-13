@@ -1,8 +1,4 @@
 {pkgs-unstable, ...}: {
-  home.packages = with pkgs-unstable; [
-    nix-your-shell
-  ];
-
   programs.zsh = {
     enable = true;
 
