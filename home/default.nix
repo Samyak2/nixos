@@ -32,6 +32,9 @@
 
     # programming language utils
     alejandra # nix formatter
+
+    # video tools
+    mkvtoolnix # edit mkv for jellyfin
   ];
 
   programs.bash = {
