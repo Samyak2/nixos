@@ -37,7 +37,11 @@
       "org/gnome/desktop/wm/preferences".titlebar-font = "Cantarell Bold 12";
 
       # enable fractional scaling
-      "org/gnome/mutter".experimental-features = ["scale-monitor-framebuffer"];
+      # "org/gnome/mutter".experimental-features = ["scale-monitor-framebuffer"];
+
+      # disable fractional scaling and scale text size instead
+      "org/gnome/mutter".experimental-features = [];
+      "org/gnome/desktop/interface".text-scaling-factor = 0.75;
     };
   };
 }
