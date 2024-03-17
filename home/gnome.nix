@@ -41,7 +41,7 @@
 
       # disable fractional scaling and scale text size instead
       "org/gnome/mutter".experimental-features = [];
-      "org/gnome/desktop/interface".text-scaling-factor = 0.75;
+      "org/gnome/desktop/interface".text-scaling-factor = 1.25;
     };
   };
 }
