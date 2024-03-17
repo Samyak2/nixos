@@ -23,3 +23,8 @@ Uses [my neovim config](https://github.com/Samyak2/nvim-config) as an input.
 
 Currently running on these hosts:
 - PC with NixOS unstable (also uses home-manager unstable)
+
+## Coming Soon(ish?)
+
+- [ ] Configurable home-manager. This will allow me to use this same repo for my Mac's home-manager config as well. The goal is to keep linux-specific and darwin-specific configs separate while sharing as much nix code as possible between them.
+- [ ] nix-darwin set up.
