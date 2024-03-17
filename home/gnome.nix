@@ -24,6 +24,17 @@
       # basic tiling
       "org/gnome/mutter".edge-tiling = true;
       "org/gnome/desktop/interface".enable-hot-corners = false;
+
+      # fonts and display
+      "org/gnome/desktop/interface" = {
+        font-antialiasing = "rgba";
+        font-hinting = "full";
+
+        font-name = "Cantarell 12";
+        document-font-name = "Cantarell 12";
+        monospace-font-name = "Source Code Pro 11";
+      };
+      "org/gnome/desktop/wm/preferences".titlebar-font = "Cantarell Bold 12";
     };
   };
 }
