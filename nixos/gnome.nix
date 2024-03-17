@@ -10,6 +10,9 @@
 
     # Systray Icons
     gnomeExtensions.appindicator
+
+    # gnome tweak tool
+    gnome.gnome-tweaks
   ];
 
   # Systray Icons
