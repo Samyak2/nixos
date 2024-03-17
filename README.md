@@ -2,6 +2,15 @@
 
 This repo holds my nix configurations.
 
+## Configurations
+
+- [NixOS](./nixos/default.nix)
+- [home-manager](./home/default.nix)
+    - This is currently very specific to the above NixOS config and only made for Linux
+
+
+The [rebuild script](rebuild.sh) takes care of applying the `hardware-configuration.nix` without checking it in to the repo. Also handles formatting nix files and auto-generating a commit message. Inspired by [No Boilerplate's rebuild script](https://gist.github.com/0atman/1a5133b842f929ba4c1e195ee67599d5).
+
 ## Flakes
 
 The configurations use nix flakes.
