@@ -28,3 +28,26 @@ Currently running on these hosts:
 
 - [ ] Configurable home-manager. This will allow me to use this same repo for my Mac's home-manager config as well. The goal is to keep linux-specific and darwin-specific configs separate while sharing as much nix code as possible between them.
 - [ ] nix-darwin set up.
+
+## NixOS set up
+
+Starting from a fresh NixOS set up, this describes the steps needed to get a fully working set up.
+- Enable flakes support: add the following snippet to `/etc/nixos/configuration.nix`:
+  ```nix
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  ```
+- Get `git` and an editor: either add it to `/etc/nixos/configuration.nix` or use `nix-shell -p git neovim`
+- Clone this repo: `cd && git clone https://github.com/Samyak2/nixos.git`
+- Switch: `sudo nixos-rebuild switch --flake .`
+- Reboot
+- Generate and add a gpg key:
+  - `gpg --full-generate-key`
+  - `(9) ECC (sign and encrypt) *default*`
+  - `(1) Curve 25519 *default*`
+  - `Key is valid for? (0) 6m`
+  - Use `gpg --list-secret-keys --keyid-format=long` and copy the ID (the text after `ed25519/`)
+  - `gpg --armor --export <key-id>`
+  - Add gpg key to GitHub: https://github.com/settings/keys
+- Generate and add an ssh key:
+  - `ssh-keygen -t ed25519 -C "your_email@example.com"`
+  - `cat ~/.ssh/id_ed25519.pub` and add it to GitHub: https://github.com/settings/keys

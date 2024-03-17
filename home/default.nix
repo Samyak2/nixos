@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ./plasma.nix
+    # ./plasma.nix
 
     {nixpkgs.overlays = [inputs.nur.overlay];}
 
