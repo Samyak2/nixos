@@ -35,6 +35,9 @@
         monospace-font-name = "Source Code Pro 11";
       };
       "org/gnome/desktop/wm/preferences".titlebar-font = "Cantarell Bold 12";
+
+      # enable fractional scaling
+      "org/gnome/mutter".experimental-features = ["scale-monitor-framebuffer"];
     };
   };
 }
