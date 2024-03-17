@@ -5,6 +5,7 @@
 }: {
   imports = [
     # ./plasma.nix
+    ./gnome.nix
 
     {nixpkgs.overlays = [inputs.nur.overlay];}
 
