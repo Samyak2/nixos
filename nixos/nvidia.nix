@@ -45,7 +45,7 @@
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
   };
 
   # source: https://github.com/TLATER/dotfiles/blob/f60413d2efe1a603fc260280550bb9de858beedb/nixos-config/hosts/yui/nvidia/default.nix#L72C3-L80C5
