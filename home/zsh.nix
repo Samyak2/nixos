@@ -7,6 +7,9 @@
 
     initExtra = ''
       ${pkgs-unstable.nix-your-shell}/bin/nix-your-shell zsh | source /dev/stdin
+
+      # highlight selected options in tab completion
+      zstyle ':completion:*' menu select
     '';
 
     history = {
