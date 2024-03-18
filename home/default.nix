@@ -12,11 +12,12 @@
     ./alacritty.nix
     ./direnv.nix
     ./firefox.nix
+    ./gh.nix
     ./git.nix
-    ./obs.nix
     ./nvim.nix
-    ./zsh.nix
+    ./obs.nix
     ./zellij.nix
+    ./zsh.nix
   ];
 
   home.username = "samyak";
@@ -31,7 +32,6 @@
     bottom # nicer top
     mob # remote mob programming
     wl-clipboard # clipboard operations on wayland
-    gh # github cli
 
     # programming language utils
     alejandra # nix formatter
