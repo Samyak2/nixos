@@ -30,12 +30,10 @@
     jq # A lightweight and flexible command-line JSON processor
     bottom # nicer top
     mob # remote mob programming
+    wl-clipboard # clipboard operations on wayland
 
     # programming language utils
     alejandra # nix formatter
-
-    # video tools
-    mkvtoolnix # edit mkv for jellyfin
   ];
 
   programs.bash = {
