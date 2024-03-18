@@ -31,6 +31,7 @@
     bottom # nicer top
     mob # remote mob programming
     wl-clipboard # clipboard operations on wayland
+    gh # github cli
 
     # programming language utils
     alejandra # nix formatter
