@@ -11,9 +11,11 @@
       gcc # for installing TS grammars
 
       # language servers
-      efm-langserver
+      efm-langserver # generic server for linters, formatters, etc.
       nil # nix language server
-      lua-language-server
+      lua-language-server # lua
+      nodePackages.pyright # python
+      nodePackages.typescript-language-server # js/ts
     ];
   };
 
