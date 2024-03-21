@@ -39,6 +39,7 @@ keybinds {
         bind "Alt t" { SwitchToMode "tab"; }
         bind "Alt s" { SwitchToMode "scroll"; }
         bind "Alt m" { SwitchToMode "move"; }
+        bind "Alt o" { SwitchToMode "session"; }
         bind "Alt n" { NewPane; }
         bind "Alt h" { MoveFocusOrTab "Left"; }
         bind "Alt l" { MoveFocusOrTab "Right"; }
@@ -62,6 +63,7 @@ keybinds {
         bind "x" { CloseFocus; }
         bind "f" { ToggleFocusFullscreen; }
         bind "z" { TogglePaneFrames; }
+        bind "w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
     }
 
     tab clear-defaults=true {
@@ -155,6 +157,8 @@ keybinds {
     locked clear-defaults=true {}
     renamepane clear-defaults=true {}
     renametab clear-defaults=true {}
-    session clear-defaults=true {}
+    session clear-defaults=true {
+      bind "Alt o" { SwitchToMode "Normal"; }
+    }
     tmux clear-defaults=true {}
 }
