@@ -47,6 +47,7 @@
         inherit system;
         config.allowUnfree = true;
       };
+      plasma-manager = inputs.plasma-manager.homeManagerModules.plasma-manager;
     in
       nixpkgs.lib.nixosSystem {
         inherit system;
@@ -76,11 +77,32 @@
 
             home-manager.users.samyak = import ./home;
 
-            home-manager.extraSpecialArgs = {inherit inputs pkgs-unstable;};
+            home-manager.extraSpecialArgs = {
+              inherit inputs pkgs-unstable;
+              username = "samyak";
+              email = "samyak201@gmail.com";
+            };
 
-            home-manager.sharedModules = [inputs.plasma-manager.homeManagerModules.plasma-manager];
+            home-manager.sharedModules = [plasma-manager];
           }
         ];
+      };
+
+    homeConfigurations.samyak-nz = let
+      system = "aarch64-darwin";
+      pkgs-unstable = import nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
+    in
+      home-manager.lib.homeManagerConfiguration {
+        pkgs = pkgs-unstable;
+        modules = [./home];
+        extraSpecialArgs = {
+          inherit inputs pkgs-unstable;
+          username = "samyak-nz";
+          email = "samyak@normalyze.ai";
+        };
       };
   };
 }

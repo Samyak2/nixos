@@ -1,27 +1,40 @@
 {
   pkgs-unstable,
   inputs,
+  lib,
+  username,
   ...
-}: {
-  imports = [
-    # ./plasma.nix
-    ./gnome.nix
+}: let
+  inherit (pkgs-unstable.stdenv) isDarwin;
+in {
+  imports =
+    [
+      {nixpkgs.overlays = [inputs.nur.overlay];}
 
-    {nixpkgs.overlays = [inputs.nur.overlay];}
+      ./alacritty.nix
+      ./direnv.nix
+      ./gh.nix
+      ./git.nix
+      ./nvim.nix
+      ./zellij.nix
+      ./zsh.nix
+    ]
+    ++ (
+      lib.optionals (!isDarwin) [
+        # ./plasma.nix
+        ./gnome.nix
 
-    ./alacritty.nix
-    ./direnv.nix
-    ./firefox.nix
-    ./gh.nix
-    ./git.nix
-    ./nvim.nix
-    ./obs.nix
-    ./zellij.nix
-    ./zsh.nix
-  ];
+        ./obs.nix
 
-  home.username = "samyak";
-  home.homeDirectory = "/home/samyak";
+        ./firefox.nix
+      ]
+    );
+
+  home.username = username;
+  home.homeDirectory =
+    if !isDarwin
+    then "/home/${username}"
+    else "/Users/${username}";
 
   home.packages = with pkgs-unstable; [
     # for signing git commits
