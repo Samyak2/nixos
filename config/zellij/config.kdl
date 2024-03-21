@@ -39,7 +39,13 @@ keybinds {
         bind "Alt t" { SwitchToMode "tab"; }
         bind "Alt s" { SwitchToMode "scroll"; }
         bind "Alt m" { SwitchToMode "move"; }
-        bind "Alt o" { SwitchToMode "session"; }
+        bind "Alt o" {
+            LaunchOrFocusPlugin "zellij:session-manager" {
+                floating true
+                move_to_focused_tab true
+            };
+            SwitchToMode "Normal"
+        }
         bind "Alt n" { NewPane; }
         bind "Alt h" { MoveFocusOrTab "Left"; }
         bind "Alt l" { MoveFocusOrTab "Right"; }
@@ -157,8 +163,6 @@ keybinds {
     locked clear-defaults=true {}
     renamepane clear-defaults=true {}
     renametab clear-defaults=true {}
-    session clear-defaults=true {
-      bind "Alt o" { SwitchToMode "Normal"; }
-    }
+    session clear-defaults=true {}
     tmux clear-defaults=true {}
 }
