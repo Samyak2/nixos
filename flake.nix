@@ -88,6 +88,23 @@
         ];
       };
 
+    homeConfigurations.samyak = let
+      system = "aarch64-darwin";
+      pkgs-unstable = import nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
+    in
+      home-manager.lib.homeManagerConfiguration {
+        pkgs = pkgs-unstable;
+        modules = [./home];
+        extraSpecialArgs = {
+          inherit inputs pkgs-unstable;
+          username = "samyak";
+          email = "samyak201@gmail.com";
+        };
+      };
+
     homeConfigurations.samyak-nz = let
       system = "aarch64-darwin";
       pkgs-unstable = import nixpkgs-unstable {
