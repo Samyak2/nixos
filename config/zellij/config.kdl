@@ -38,6 +38,7 @@ keybinds {
         bind "Alt r" { SwitchToMode "resize"; }
         bind "Alt t" { SwitchToMode "tab"; }
         bind "Alt s" { SwitchToMode "scroll"; }
+        bind "Alt c" { Copy; }
         bind "Alt m" { SwitchToMode "move"; }
         bind "Alt o" {
             LaunchOrFocusPlugin "zellij:session-manager" {
@@ -125,7 +126,7 @@ keybinds {
     scroll clear-defaults=true {
         bind "e" { EditScrollback; SwitchToMode "normal"; }
         bind "Enter" "Esc" { SwitchToMode "normal"; }
-        bind "Alt c" { ScrollToBottom; SwitchToMode "normal"; }
+        bind "Alt c" { Copy; }
         bind "j" "Down" { ScrollDown; }
         bind "k" "Up" { ScrollUp; }
         bind "Alt f" "PageDown" "Right" "l" { PageScrollDown; }
