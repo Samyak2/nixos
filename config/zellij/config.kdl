@@ -1,0 +1,14 @@
+simplified_ui true
+pane_frames false
+scroll_buffer_size 10000
+copy_on_select false
+
+session_serialization true
+pane_viewport_serialization true
+scrollback_lines_to_serialize 1000
+
+ui {
+    pane_frames {
+        hide_session_name true
+    }
+}
