@@ -45,6 +45,7 @@ in {
     bottom # nicer top
     mob # remote mob programming
     wl-clipboard # clipboard operations on wayland
+    awscli2 # AWS
 
     # programming language utils
     alejandra # nix formatter
