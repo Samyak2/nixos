@@ -75,11 +75,11 @@ keybinds {
 
     tab clear-defaults=true {
         bind "Enter" "Esc" "Space" { SwitchToMode "normal"; }
-        bind "h" "Left" { GoToPreviousTab; }
-        bind "l" "Right" { GoToNextTab; }
-        bind "n" { NewTab; }
+        bind "h" "Left" { GoToPreviousTab; SwitchToMode "normal"; }
+        bind "l" "Right" { GoToNextTab; SwitchToMode "normal"; }
+        bind "n" { NewTab; SwitchToMode "normal"; }
         bind "x" { CloseTab; }
-        bind "s" { ToggleActiveSyncTab; }
+        // bind "s" { ToggleActiveSyncTab; }
         bind "Alt h" { MoveFocus "Left"; }
         bind "Alt l" { MoveFocus "Right"; }
         bind "Alt j" { MoveFocus "Down"; }
