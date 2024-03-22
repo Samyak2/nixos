@@ -97,7 +97,14 @@
     in
       home-manager.lib.homeManagerConfiguration {
         pkgs = pkgs-unstable;
-        modules = [./home];
+        modules = [
+          ./home
+          {
+            config = {
+              local.copilot-enabled = false;
+            };
+          }
+        ];
         extraSpecialArgs = {
           inherit inputs pkgs-unstable;
           username = "samyak";
@@ -114,7 +121,14 @@
     in
       home-manager.lib.homeManagerConfiguration {
         pkgs = pkgs-unstable;
-        modules = [./home];
+        modules = [
+          ./home
+          {
+            config = {
+              local.copilot-enabled = true;
+            };
+          }
+        ];
         extraSpecialArgs = {
           inherit inputs pkgs-unstable;
           username = "samyak-nz";
