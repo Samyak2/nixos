@@ -9,6 +9,10 @@
       signByDefault = true;
     };
 
+    ignores = [
+      "/.direnv"
+    ];
+
     extraConfig = {
       commit = {
         verbose = true;
