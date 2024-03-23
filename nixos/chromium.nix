@@ -1,5 +1,5 @@
-{...}: {
-  programs.chromium = {
-    enable = true;
-  };
+{pkgs, ...}: {
+  environment.systemPackages = with pkgs; [
+    chromium
+  ];
 }
