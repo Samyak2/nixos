@@ -22,6 +22,7 @@
     ./nvidia.nix
     ./steam.nix
     ./jellyfin.nix
+    ./chromium.nix
 
     ./nix-settings.nix
 
