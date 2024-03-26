@@ -25,6 +25,8 @@
           lua-language-server # lua
           nodePackages.pyright # python
           nodePackages.typescript-language-server # js/ts
+          # the below provides eslint, html, css, json, md
+          vscode-langservers-extracted
         ]
         ++ (lib.optionals config.local.copilot-enabled [
           nodejs_21
