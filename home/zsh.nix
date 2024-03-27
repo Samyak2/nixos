@@ -49,6 +49,10 @@
         file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
       }
     ];
+
+    # needed for zsh-vi-mode and fzf interop
+    # ref: https://github.com/jeffreytse/zsh-vi-mode?tab=readme-ov-file#initialization-mode
+    localVariables.ZVM_INIT_MODE = "sourcing";
   };
 
   programs.starship = {
