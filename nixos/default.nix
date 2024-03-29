@@ -12,8 +12,8 @@
     ./input-methods.nix
     ./bluetooth.nix
     ./pipewire.nix
-    # ./kde.nix
-    ./gnome.nix
+    ./kde.nix
+    # ./gnome.nix
     ./fonts.nix
     ./zsh-global.nix
     ./nvim-global.nix

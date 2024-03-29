@@ -21,8 +21,8 @@ in {
     ]
     ++ (
       lib.optionals (!isDarwin) [
-        # ./plasma.nix
-        ./gnome.nix
+        ./plasma.nix
+        # ./gnome.nix
 
         ./obs.nix
 
