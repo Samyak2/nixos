@@ -47,6 +47,7 @@ in {
     wl-clipboard # clipboard operations on wayland
     awscli2 # AWS
     devenv # easier development environments using nix
+    cachix # binary caches
 
     # programming language utils
     alejandra # nix formatter
