@@ -46,6 +46,7 @@ in {
     mob # remote mob programming
     wl-clipboard # clipboard operations on wayland
     awscli2 # AWS
+    devenv # easier development environments using nix
 
     # programming language utils
     alejandra # nix formatter
