@@ -30,5 +30,7 @@
   environment.systemPackages = with pkgs; [
     pavucontrol
     pulseaudio # for pactl
+    easyeffects # for noise cancellation
+    qpwgraph # for sidetone
   ];
 }
