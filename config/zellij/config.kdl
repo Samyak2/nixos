@@ -2,6 +2,7 @@ simplified_ui true
 pane_frames false
 scroll_buffer_size 10000
 copy_on_select false
+default_layout "compact"
 
 session_serialization true
 pane_viewport_serialization true
