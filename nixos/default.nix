@@ -23,6 +23,7 @@
     ./steam.nix
     ./jellyfin.nix
     ./chromium.nix
+    ./mpv.nix
 
     ./nix-settings.nix
 
