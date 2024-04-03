@@ -40,6 +40,7 @@ in {
     # for signing git commits
     gnupg
 
+    fd # nicer find
     ripgrep # recursively searches directories for a regex pattern
     jq # A lightweight and flexible command-line JSON processor
     bottom # nicer top
