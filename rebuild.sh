@@ -33,5 +33,5 @@ fi
 
 git commit $git_commit_extra_args -m "nixos gen: $gen_only
 
-$gen"
+nixos gen: $gen"
 git commit --amend

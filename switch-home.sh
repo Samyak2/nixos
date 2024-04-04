@@ -27,5 +27,5 @@ fi
 
 git commit $git_commit_extra_args -m "home-manager gen: $gen
 
-$gen"
+home-manager gen: $gen"
 git commit --amend
