@@ -19,13 +19,11 @@ gen=$(home-manager generations | head -n1 | sed 's/ -> .*$//')
 
 git --no-pager diff --staged
 
-git_commit_extra_args=""
-if [[ "$to_amend" == "amend" ]];
+if [[ "$to_amend" != "amend" ]];
 then
-    git_commit_extra_args="--amend"
+    git commit -m "home-manager gen: $gen
+
+    home-manager gen: $gen"
 fi
 
-git commit $git_commit_extra_args -m "home-manager gen: $gen
-
-home-manager gen: $gen"
 git commit --amend
