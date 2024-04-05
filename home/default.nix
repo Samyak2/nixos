@@ -12,6 +12,7 @@ in {
       {nixpkgs.overlays = [inputs.nur.overlay];}
 
       ./alacritty.nix
+      ./obsidian.nix
       ./direnv.nix
       ./gh.nix
       ./git.nix
