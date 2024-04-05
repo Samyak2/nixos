@@ -23,7 +23,7 @@ if [[ "$to_amend" != "amend" ]];
 then
     git commit -m "home-manager gen: $gen
 
-    home-manager gen: $gen"
+home-manager gen: $gen"
 fi
 
 git commit --amend
