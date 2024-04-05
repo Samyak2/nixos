@@ -11,6 +11,7 @@ in {
     [
       {nixpkgs.overlays = [inputs.nur.overlay];}
 
+      ./fonts.nix
       ./alacritty.nix
       ./obsidian.nix
       ./direnv.nix
