@@ -26,7 +26,7 @@ in {
       font = {
         size = 16;
         normal = {
-          family = "Victor Mono";
+          family = "VictorMono Nerd Font Mono";
         };
       };
     };

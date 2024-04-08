@@ -2,6 +2,6 @@
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs-unstable; [
-    victor-mono
+    (nerdfonts.override {fonts = ["VictorMono"];})
   ];
 }
