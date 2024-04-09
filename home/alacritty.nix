@@ -27,6 +27,11 @@ in {
         size = 15;
         normal = {
           family = "VictorMono Nerd Font Mono";
+          style = "Regular";
+        };
+        italic = {
+          family = "VictorMono Nerd Font Mono";
+          style = "Regular";
         };
       };
     };
