@@ -26,6 +26,7 @@
         nodePackages.typescript-language-server # js/ts
         # the below provides eslint, html, css, json, md
         vscode-langservers-extracted
+        taplo # TOML toolkit
 
         # required for iamcco/markdown-preview.nvim and copilot
         nodejs_21
