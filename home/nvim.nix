@@ -29,7 +29,7 @@
         taplo # TOML toolkit
 
         # required for iamcco/markdown-preview.nvim and copilot
-        nodejs_21
+        nodejs_22
       ];
     };
 
