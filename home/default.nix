@@ -3,6 +3,7 @@
   inputs,
   lib,
   username,
+  config,
   ...
 }: let
   inherit (pkgs-unstable.stdenv) isDarwin;
@@ -52,6 +53,7 @@ in {
     devenv # easier development environments using nix
     cachix # binary caches
     nix-output-monitor # better nix output
+    nvd # nix diff
 
     # programming language utils
     alejandra # nix formatter
@@ -61,33 +63,40 @@ in {
     enable = true;
   };
 
-  home.activation = lib.optionalAttrs isDarwin {
-    # source: https://github.com/mjrusso/nixos-config/blob/b626e17197d20c68628d7bfe48a1c1911205d9c6/modules/darwin/home-manager.nix
+  home.activation =
+    {
+      # report diff using nvd after switching
+      report-changes = config.lib.dag.entryAnywhere ''
+        ${pkgs-unstable.nvd}/bin/nvd diff $oldGenPath $newGenPath
+      '';
+    }
+    // (lib.optionalAttrs isDarwin {
+      # source: https://github.com/mjrusso/nixos-config/blob/b626e17197d20c68628d7bfe48a1c1911205d9c6/modules/darwin/home-manager.nix
 
-    # Ensure that app launchers (e.g. Alacritty) are properly symlinked (so
-    # they can be found via Spotlight, are pinnable to the Dock, etc.).
-    #
-    # See more discussion here:
-    # https://github.com/nix-community/home-manager/issues/1341
-    #
-    # In particular, this approach is adapted from:
-    # https://github.com/nix-community/home-manager/issues/1341#issuecomment-761021848
-    #
-    # Note that the `readlink` is necessary because because Mac aliases
-    # don't work on symlinks, as explained here:
-    # https://github.com/NixOS/nix/issues/956#issuecomment-1367457122
-    aliasApplications = lib.hm.dag.entryAfter ["writeBoundary"] ''
-      app_folder=$(echo /Applications);
-      for app in $(find "$newGenPath/home-path/Applications" -type l); do
-        $DRY_RUN_CMD rm -f "$app_folder/$(basename $app)"
-        $DRY_RUN_CMD /usr/bin/osascript \
-            -e "tell app \"Finder\"" \
-            -e "make new alias file to POSIX file \"$(readlink $app)\" at POSIX file \"$app_folder\"" \
-            -e "set name of result to \"$(basename $app)\"" \
-            -e "end tell"
-      done
-    '';
-  };
+      # Ensure that app launchers (e.g. Alacritty) are properly symlinked (so
+      # they can be found via Spotlight, are pinnable to the Dock, etc.).
+      #
+      # See more discussion here:
+      # https://github.com/nix-community/home-manager/issues/1341
+      #
+      # In particular, this approach is adapted from:
+      # https://github.com/nix-community/home-manager/issues/1341#issuecomment-761021848
+      #
+      # Note that the `readlink` is necessary because because Mac aliases
+      # don't work on symlinks, as explained here:
+      # https://github.com/NixOS/nix/issues/956#issuecomment-1367457122
+      aliasApplications = lib.hm.dag.entryAfter ["writeBoundary"] ''
+        app_folder=$(echo /Applications);
+        for app in $(find "$newGenPath/home-path/Applications" -type l); do
+          $DRY_RUN_CMD rm -f "$app_folder/$(basename $app)"
+          $DRY_RUN_CMD /usr/bin/osascript \
+              -e "tell app \"Finder\"" \
+              -e "make new alias file to POSIX file \"$(readlink $app)\" at POSIX file \"$app_folder\"" \
+              -e "set name of result to \"$(basename $app)\"" \
+              -e "end tell"
+        done
+      '';
+    });
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

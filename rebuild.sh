@@ -15,7 +15,11 @@ alejandra . -e hardware-configuration.nix
 
 git add .
 
-sudo nixos-rebuild switch --flake .
+if [ -x "$(command -v nom)" ]; then
+    sudo nixos-rebuild switch --flake . |& nom
+else
+    sudo nixos-rebuild switch --flake .
+fi
 
 gen=$(nixos-rebuild list-generations | grep current)
 
