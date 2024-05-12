@@ -51,6 +51,7 @@ in {
     awscli2 # AWS
     devenv # easier development environments using nix
     cachix # binary caches
+    nix-output-monitor # better nix output
 
     # programming language utils
     alejandra # nix formatter

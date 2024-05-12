@@ -13,7 +13,11 @@ alejandra . -e hardware-configuration.nix
 
 git add .
 
-home-manager switch --flake .
+if [ -x "$(command -v nom)" ]; then
+    home-manager switch --flake . |& nom
+else
+    home-manager switch --flake .
+fi
 
 gen=$(home-manager generations | head -n1 | sed 's/ -> .*$//')
 
