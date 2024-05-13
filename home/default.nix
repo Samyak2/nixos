@@ -18,6 +18,7 @@ in {
       ./direnv.nix
       ./gh.nix
       ./git.nix
+      ./npm.nix
       ./nvim.nix
       ./zellij.nix
       ./zsh.nix
