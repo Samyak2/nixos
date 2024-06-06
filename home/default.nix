@@ -40,25 +40,28 @@ in {
     then "/home/${username}"
     else "/Users/${username}";
 
-  home.packages = with pkgs-unstable; [
-    # for signing git commits
-    gnupg
+  home.packages = with pkgs-unstable; ([
+      # for signing git commits
+      gnupg
 
-    fd # nicer find
-    ripgrep # recursively searches directories for a regex pattern
-    jq # A lightweight and flexible command-line JSON processor
-    bottom # nicer top
-    mob # remote mob programming
-    wl-clipboard # clipboard operations on wayland
-    awscli2 # AWS
-    devenv # easier development environments using nix
-    cachix # binary caches
-    nix-output-monitor # better nix output
-    nvd # nix diff
+      fd # nicer find
+      ripgrep # recursively searches directories for a regex pattern
+      jq # A lightweight and flexible command-line JSON processor
+      bottom # nicer top
+      mob # remote mob programming
+      wl-clipboard # clipboard operations on wayland
+      awscli2 # AWS
+      devenv # easier development environments using nix
+      cachix # binary caches
+      nix-output-monitor # better nix output
+      nvd # nix diff
 
-    # programming language utils
-    alejandra # nix formatter
-  ];
+      # programming language utils
+      alejandra # nix formatter
+    ]
+    ++ (lib.optionals isDarwin [
+      darwin.trash # utility to move to trash on mac
+    ]));
 
   programs.bash = {
     enable = true;
