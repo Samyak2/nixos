@@ -15,6 +15,10 @@
       enable = true;
       defaultEditor = true;
 
+      extraLuaConfig = ''
+        SET_UP_THROUGH_MY_NIX_HM_CONFIG=true
+      '';
+
       extraPackages = with pkgs-unstable; [
         gcc # for installing TS grammars
 
