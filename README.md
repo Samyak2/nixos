@@ -23,6 +23,7 @@ Uses [my neovim config](https://github.com/Samyak2/nvim-config) as an input.
 
 Currently running on these hosts:
 - PC with NixOS unstable (also uses home-manager unstable)
+- MacBook with home-manager (on MacOS)
 
 ## Coming Soon(ish?)
 
