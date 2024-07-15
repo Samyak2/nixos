@@ -26,7 +26,7 @@
         efm-langserver # generic server for linters, formatters, etc.
         nil # nix language server
         lua-language-server # lua
-        pyright # python
+        basedpyright # python
         nodePackages.typescript-language-server # js/ts
         # the below provides eslint, html, css, json, md
         vscode-langservers-extracted
