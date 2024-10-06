@@ -3,8 +3,8 @@
   config,
   ...
 }:
-lib.mkIf (!config.local.headless)
-{
+if (!config.local.headless)
+then {
   programs.plasma = {
     enable = true;
 
@@ -24,3 +24,4 @@ lib.mkIf (!config.local.headless)
     };
   };
 }
+else {}
