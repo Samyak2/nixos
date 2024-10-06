@@ -1,10 +1,10 @@
 {
   lib,
-  config,
+  options,
   ...
 }:
-if (!config.local.headless)
-then {
+lib.optionalAttrs (builtins.hasAttr "plasma" options.programs)
+{
   programs.plasma = {
     enable = true;
 
@@ -24,4 +24,3 @@ then {
     };
   };
 }
-else {}
