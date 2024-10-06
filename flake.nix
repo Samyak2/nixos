@@ -137,7 +137,7 @@
       };
 
     # cloud server
-    homeConfigurations.server = let
+    homeConfigurations.ubuntu = let
       system = "aarch64-linux";
       pkgs-unstable = import nixpkgs-unstable {
         inherit system;
