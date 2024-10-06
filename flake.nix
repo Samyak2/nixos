@@ -135,5 +135,31 @@
           email = "samyak@normalyze.ai";
         };
       };
+
+    # cloud server
+    homeConfigurations.server = let
+      system = "aarch64-linux";
+      pkgs-unstable = import nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
+    in
+      home-manager.lib.homeManagerConfiguration {
+        pkgs = pkgs-unstable;
+        modules = [
+          {
+            config = {
+              local.copilot-enabled = false;
+              local.headless = true;
+            };
+          }
+          ./home
+        ];
+        extraSpecialArgs = {
+          inherit inputs pkgs-unstable;
+          username = "ubuntu";
+          email = "samyak201@gmail.com";
+        };
+      };
   };
 }

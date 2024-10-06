@@ -10,11 +10,15 @@
 in {
   imports =
     [
+      {
+        options.local.headless = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
+      }
+
       {nixpkgs.overlays = [inputs.nur.overlay];}
 
-      ./fonts.nix
-      ./alacritty.nix
-      ./obsidian.nix
       ./direnv.nix
       ./gh.nix
       ./git.nix
@@ -22,6 +26,10 @@ in {
       ./nvim.nix
       ./zellij.nix
       ./zsh.nix
+
+      ./fonts.nix
+      ./alacritty.nix
+      ./obsidian.nix
     ]
     ++ (
       lib.optionals (!isDarwin) [
@@ -49,7 +57,6 @@ in {
       jq # A lightweight and flexible command-line JSON processor
       bottom # nicer top
       mob # remote mob programming
-      wl-clipboard # clipboard operations on wayland
       awscli2 # AWS
       devenv # easier development environments using nix
       cachix # binary caches
@@ -59,6 +66,9 @@ in {
       # programming language utils
       alejandra # nix formatter
     ]
+    ++ (lib.optionals (!config.local.headless) [
+      wl-clipboard # clipboard operations on wayland
+    ])
     ++ (lib.optionals isDarwin [
       darwin.trash # utility to move to trash on mac
     ]));
