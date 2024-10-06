@@ -1,4 +1,10 @@
-{...}: {
+{
+  lib,
+  config,
+  ...
+}:
+lib.mkIf (!config.local.headless)
+{
   programs.plasma = {
     enable = true;
 
