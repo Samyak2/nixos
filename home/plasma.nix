@@ -1,9 +1,9 @@
 {
   lib,
-  options,
+  config,
   ...
 }:
-lib.optionalAttrs (builtins.hasAttr "plasma" options.programs)
+lib.mkIf (!config.local.headless)
 {
   programs.plasma = {
     enable = true;

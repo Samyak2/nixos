@@ -143,6 +143,7 @@
         inherit system;
         config.allowUnfree = true;
       };
+      plasma-manager = inputs.plasma-manager.homeManagerModules.plasma-manager;
     in
       home-manager.lib.homeManagerConfiguration {
         pkgs = pkgs-unstable;
@@ -160,6 +161,7 @@
           username = "ubuntu";
           email = "samyak201@gmail.com";
         };
+        sharedModules = [plasma-manager];
       };
   };
 }
