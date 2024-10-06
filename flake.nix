@@ -154,6 +154,7 @@
               local.headless = true;
             };
           }
+          plasma-manager
           ./home
         ];
         extraSpecialArgs = {
@@ -161,7 +162,6 @@
           username = "ubuntu";
           email = "samyak201@gmail.com";
         };
-        sharedModules = [plasma-manager];
       };
   };
 }
