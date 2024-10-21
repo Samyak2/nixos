@@ -21,6 +21,7 @@
 
       extraPackages = with pkgs-unstable; [
         gcc # for installing TS grammars
+        tree-sitter # some TS grammars need this installed. ex: latex
 
         # language servers
         efm-langserver # generic server for linters, formatters, etc.
