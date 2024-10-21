@@ -87,11 +87,11 @@
     "nvim-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1729520588,
-        "narHash": "sha256-4K6E7U8WkO3NjFJxxq9YyJf6gunPMlGyR35Cs0v7rFg=",
+        "lastModified": 1729522652,
+        "narHash": "sha256-LGkCkIzh/NVHavWymdJfi/vtwaGnW+GYCEwhLRY7d74=",
         "owner": "Samyak2",
         "repo": "nvim-config",
-        "rev": "f6e71d95cb0f89ec0aec4001ea1bae2048e3b4b0",
+        "rev": "b956a5b79d3396269add36a8fc0b5f90e9e49f72",
         "type": "github"
       },
       "original": {
