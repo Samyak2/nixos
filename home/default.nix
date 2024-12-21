@@ -17,7 +17,7 @@ in {
         };
       }
 
-      {nixpkgs.overlays = [inputs.nur.overlay];}
+      {nixpkgs.overlays = [inputs.nur.overlays.default];}
 
       ./direnv.nix
       ./gh.nix
