@@ -1,0 +1,17 @@
+let mapleader=" "
+
+set surround
+set commentary
+set incsearch
+set ignorecase
+set smartcase
+
+" Plugins
+Plug 'justinmk/vim-sneak'
+
+" Mappings
+map <leader>d <Action>(Debug)
+map <leader>r <Action>(RenameElement)
+
+" Reformat the current line only
+map <leader>l V<Action>(ReformatCode)

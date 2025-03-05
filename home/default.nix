@@ -15,6 +15,10 @@ in {
           type = lib.types.bool;
           default = false;
         };
+        options.local.java = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
       }
 
       {nixpkgs.overlays = [inputs.nur.overlays.default];}
@@ -22,6 +26,8 @@ in {
       ./direnv.nix
       ./gh.nix
       ./git.nix
+      ./java.nix
+      ./ideavim.nix
       ./npm.nix
       ./nvim.nix
       ./zellij.nix
@@ -48,7 +54,8 @@ in {
     then "/home/${username}"
     else "/Users/${username}";
 
-  home.packages = with pkgs-unstable; ([
+  home.packages = with pkgs-unstable; (
+    [
       # for signing git commits
       gnupg
 
@@ -71,7 +78,8 @@ in {
     ])
     ++ (lib.optionals isDarwin [
       darwin.trash # utility to move to trash on mac
-    ]));
+    ])
+  );
 
   programs.bash = {
     enable = true;

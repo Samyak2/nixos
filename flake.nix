@@ -136,6 +136,31 @@
         };
       };
 
+    homeConfigurations.samyak-e6 = let
+      system = "aarch64-darwin";
+      pkgs-unstable = import nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
+    in
+      home-manager.lib.homeManagerConfiguration {
+        pkgs = pkgs-unstable;
+        modules = [
+          ./home
+          {
+            config = {
+              local.copilot-enabled = true;
+              local.java = true;
+            };
+          }
+        ];
+        extraSpecialArgs = {
+          inherit inputs pkgs-unstable;
+          username = "samyak-e6";
+          email = "samyak@e6x.io";
+        };
+      };
+
     # cloud server
     homeConfigurations.ubuntu = let
       system = "aarch64-linux";
