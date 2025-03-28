@@ -5,6 +5,12 @@
     # needs `environment.pathsToLink = [ "/share/zsh" ]` in nixos config
     enableCompletion = true;
 
+    initExtraFirst = ''
+      function zvm_after_init() {
+        zvm_bindkey viins "^R" fzf-history-widget
+      }
+    '';
+
     initExtra = ''
       ${pkgs-unstable.nix-your-shell}/bin/nix-your-shell zsh | source /dev/stdin
 
