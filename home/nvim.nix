@@ -19,23 +19,25 @@
         SET_UP_THROUGH_MY_NIX_HM_CONFIG=true
       '';
 
-      extraPackages = with pkgs-unstable; [
-        gcc # for installing TS grammars
-        tree-sitter # some TS grammars need this installed. ex: latex
+      extraPackages = with pkgs-unstable;
+        [
+          gcc # for installing TS grammars
+          tree-sitter # some TS grammars need this installed. ex: latex
 
-        # language servers
-        efm-langserver # generic server for linters, formatters, etc.
-        nil # nix language server
-        lua-language-server # lua
-        # basedpyright # python
-        nodePackages.typescript-language-server # js/ts
-        # the below provides eslint, html, css, json, md
-        vscode-langservers-extracted
-        taplo # TOML toolkit
+          # language servers
+          efm-langserver # generic server for linters, formatters, etc.
+          nil # nix language server
+          lua-language-server # lua
+          basedpyright # python
+          nodePackages.typescript-language-server # js/ts
+          # the below provides eslint, html, css, json, md
+          vscode-langservers-extracted
+          taplo # TOML toolkit
 
-        # required for iamcco/markdown-preview.nvim and copilot
-        nodejs_22
-      ];
+          # required for iamcco/markdown-preview.nvim and copilot
+          nodejs_22
+        ]
+        ++ lib.optionals (config.local.java) [jdt-language-server];
     };
 
     home.file.".config/nvim".source = "${inputs.nvim-config}";

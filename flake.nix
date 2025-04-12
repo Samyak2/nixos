@@ -151,6 +151,10 @@
             config = {
               local.copilot-enabled = true;
               local.java = true;
+              local.cloud.aws = true;
+              local.cloud.azure = true;
+              local.k8s = true;
+              local.jinja = true;
             };
           }
         ];

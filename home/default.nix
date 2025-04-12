@@ -19,6 +19,22 @@ in {
           type = lib.types.bool;
           default = false;
         };
+        options.local.cloud.aws = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
+        options.local.cloud.azure = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
+        options.local.k8s = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
+        options.local.jinja = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
       }
 
       {nixpkgs.overlays = [inputs.nur.overlays.default];}
@@ -64,20 +80,39 @@ in {
       jq # A lightweight and flexible command-line JSON processor
       bottom # nicer top
       mob # remote mob programming
-      awscli2 # AWS
       devenv # easier development environments using nix
       cachix # binary caches
       nix-output-monitor # better nix output
       nvd # nix diff
+      parallel # gnu parallel
 
       # programming language utils
       alejandra # nix formatter
+
+      # languages
+      (python312.withPackages
+        (ps:
+          with ps;
+            []
+            ++ (lib.optionals (config.local.jinja) [
+              jinja2
+            ])))
     ]
     ++ (lib.optionals (!config.local.headless) [
       wl-clipboard # clipboard operations on wayland
     ])
     ++ (lib.optionals isDarwin [
       darwin.trash # utility to move to trash on mac
+    ])
+    ++ (lib.optionals (config.local.cloud.aws) [
+      awscli2 # AWS
+    ])
+    ++ (lib.optionals (config.local.cloud.azure) [
+      azure-cli # Azure
+    ])
+    ++ (lib.optionals (config.local.k8s) [
+      kubernetes-helm # helm cli
+      kubelogin
     ])
   );
 
