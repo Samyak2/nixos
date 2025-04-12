@@ -48,9 +48,6 @@ keybinds {
                 floating true
                 move_to_focused_tab true
             };
-            // LaunchOrFocusPlugin "zj-smart-sessions" {
-            //     floating true
-            // };
             SwitchToMode "Normal"
         }
         bind "Alt n" { NewPane; }
