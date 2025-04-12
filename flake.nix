@@ -30,6 +30,8 @@
       url = "github:MrOtherGuy/firefox-csshacks";
       flake = false;
     };
+
+    zj-smart-sessions.url = "github:dj95/zj-smart-sessions";
   };
 
   outputs = {
@@ -37,9 +39,16 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
+    zj-smart-sessions,
     ...
   } @ inputs: let
     inherit (self) outputs;
+
+    nixpkgs-unstable-overlays = [
+      (final: prev: {
+        zj-smart-sessions = zj-smart-sessions.packages.${prev.system}.default;
+      })
+    ];
   in {
     nixosConfigurations.nixos = let
       system = "x86_64-linux";
@@ -93,6 +102,7 @@
       pkgs-unstable = import nixpkgs-unstable {
         inherit system;
         config.allowUnfree = true;
+        overlays = nixpkgs-unstable-overlays;
       };
     in
       home-manager.lib.homeManagerConfiguration {
@@ -141,6 +151,7 @@
       pkgs-unstable = import nixpkgs-unstable {
         inherit system;
         config.allowUnfree = true;
+        overlays = nixpkgs-unstable-overlays;
       };
     in
       home-manager.lib.homeManagerConfiguration {
