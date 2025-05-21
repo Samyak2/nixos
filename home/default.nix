@@ -78,6 +78,7 @@ in {
       fd # nicer find
       ripgrep # recursively searches directories for a regex pattern
       jq # A lightweight and flexible command-line JSON processor
+      htop # nicer top
       bottom # nicer top
       mob # remote mob programming
       devenv # easier development environments using nix
