@@ -15,3 +15,7 @@ map <leader>r <Action>(RenameElement)
 
 " Reformat the current line only
 map <leader>l V<Action>(ReformatCode)
+
+" Navigate errors
+map ]d <Action>(GotoNextError)
+map [d <Action>(GotoPreviousError)
