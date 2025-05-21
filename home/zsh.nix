@@ -1,6 +1,16 @@
-{pkgs-unstable, ...}: {
+{
+  pkgs-unstable,
+  config,
+  ...
+}: {
   programs.zsh = {
     enable = true;
+
+    # sophos kills perf of nix zsh for some reason. so use system git while keep config from nix.
+    package =
+      if config.local.sophos
+      then pkgs-unstable.emptyDirectory
+      else pkgs-unstable.zsh;
 
     # needs `environment.pathsToLink = [ "/share/zsh" ]` in nixos config
     enableCompletion = true;

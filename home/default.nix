@@ -35,6 +35,10 @@ in {
           type = lib.types.bool;
           default = false;
         };
+        options.local.sophos = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
       }
 
       {nixpkgs.overlays = [inputs.nur.overlays.default];}

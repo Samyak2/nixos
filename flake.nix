@@ -155,6 +155,7 @@
               local.cloud.azure = true;
               local.k8s = true;
               local.jinja = true;
+              local.sophos = true;
             };
           }
         ];
