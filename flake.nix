@@ -30,6 +30,8 @@
       url = "github:MrOtherGuy/firefox-csshacks";
       flake = false;
     };
+
+    mac-app-util.url = "github:hraban/mac-app-util";
   };
 
   outputs = {
@@ -37,6 +39,7 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
+    mac-app-util,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -98,6 +101,7 @@
       home-manager.lib.homeManagerConfiguration {
         pkgs = pkgs-unstable;
         modules = [
+          mac-app-util.homeManagerModules.default
           ./home
           {
             config = {
@@ -146,6 +150,7 @@
       home-manager.lib.homeManagerConfiguration {
         pkgs = pkgs-unstable;
         modules = [
+          mac-app-util.homeManagerModules.default
           ./home
           {
             config = {

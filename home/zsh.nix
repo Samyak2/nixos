@@ -1,6 +1,7 @@
 {
   pkgs-unstable,
   config,
+  lib,
   ...
 }: {
   programs.zsh = {
@@ -15,18 +16,19 @@
     # needs `environment.pathsToLink = [ "/share/zsh" ]` in nixos config
     enableCompletion = true;
 
-    initExtraFirst = ''
-      function zvm_after_init() {
-        zvm_bindkey viins "^R" fzf-history-widget
-      }
-    '';
+    initContent = lib.mkMerge [
+      (lib.mkBefore ''
+        function zvm_after_init() {
+          zvm_bindkey viins "^R" fzf-history-widget
+        }
+      '')
+      ''
+        ${pkgs-unstable.nix-your-shell}/bin/nix-your-shell zsh | source /dev/stdin
 
-    initExtra = ''
-      ${pkgs-unstable.nix-your-shell}/bin/nix-your-shell zsh | source /dev/stdin
-
-      # highlight selected options in tab completion
-      zstyle ':completion:*' menu select
-    '';
+        # highlight selected options in tab completion
+        zstyle ':completion:*' menu select
+      ''
+    ];
 
     history = {
       extended = true;

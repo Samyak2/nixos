@@ -147,17 +147,37 @@ in {
       # Note that the `readlink` is necessary because because Mac aliases
       # don't work on symlinks, as explained here:
       # https://github.com/NixOS/nix/issues/956#issuecomment-1367457122
-      aliasApplications = lib.hm.dag.entryAfter ["writeBoundary"] ''
-        app_folder=$(echo /Applications);
-        for app in $(find "$newGenPath/home-path/Applications" -type l); do
-          $DRY_RUN_CMD rm -f "$app_folder/$(basename $app)"
-          $DRY_RUN_CMD /usr/bin/osascript \
-              -e "tell app \"Finder\"" \
-              -e "make new alias file to POSIX file \"$(readlink $app)\" at POSIX file \"$app_folder\"" \
-              -e "set name of result to \"$(basename $app)\"" \
-              -e "end tell"
-        done
-      '';
+      # aliasApplications = lib.hm.dag.entryAfter ["writeBoundary"] ''
+      #   app_folder=$(echo ~/Applications);
+      #   for app in $(find "$newGenPath/home-path/Applications" -type l); do
+      #     $DRY_RUN_CMD rm -f "$app_folder/$(basename $app)"
+      #     $DRY_RUN_CMD /usr/bin/osascript \
+      #         -e "tell app \"Finder\"" \
+      #         -e "make new alias file to POSIX file \"$(readlink $app)\" at POSIX file \"$app_folder\"" \
+      #         -e "set name of result to \"$(basename $app)\"" \
+      #         -e "end tell"
+      #   done
+      # '';
+
+      # copyApplications = let
+      #   apps = pkgs-unstable.buildEnv {
+      #     name = "home-manager-applications";
+      #     paths = config.home.packages;
+      #     pathsToLink = "/Applications";
+      #   };
+      # in
+      #   lib.hm.dag.entryAfter ["writeBoundary"] ''
+      #     baseDir="$HOME/Applications/Home Manager Apps"
+      #     if [ -d "$baseDir" ]; then
+      #       rm -rf "$baseDir"
+      #     fi
+      #     mkdir -p "$baseDir"
+      #     for appFile in ${apps}/Applications/*; do
+      #       target="$baseDir/$(basename "$appFile")"
+      #       $DRY_RUN_CMD cp ''${VERBOSE_ARG:+-v} -fHRL "$appFile" "$baseDir"
+      #       $DRY_RUN_CMD chmod ''${VERBOSE_ARG:+-v} -R +w "$target"
+      #     done
+      #   '';
     });
 
   # This value determines the home Manager release that your
