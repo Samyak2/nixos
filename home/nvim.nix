@@ -30,9 +30,11 @@
           lua-language-server # lua
           basedpyright # python
           nodePackages.typescript-language-server # js/ts
-          # the below provides eslint, html, css, json, md
-          vscode-langservers-extracted
+          vscode-langservers-extracted # provides eslint, html, css, json, md
           taplo # TOML toolkit
+
+          # debugger for rust/c/c++
+          vscode-extensions.vadimcn.vscode-lldb.adapter
 
           # required for iamcco/markdown-preview.nvim and copilot
           nodejs_22
