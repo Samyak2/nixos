@@ -21,6 +21,11 @@
         function zvm_after_init() {
           zvm_bindkey viins "^R" fzf-history-widget
         }
+
+        # support rustup installed cargo
+        if [ -f "$HOME/.cargo/env" ]; then
+          . "$HOME/.cargo/env"
+        fi
       '')
       ''
         ${pkgs-unstable.nix-your-shell}/bin/nix-your-shell zsh | source /dev/stdin
