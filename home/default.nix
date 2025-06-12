@@ -118,6 +118,7 @@ in {
     ++ (lib.optionals (config.local.k8s) [
       kubernetes-helm # helm cli
       kubelogin
+      k9s
     ])
   );
 
