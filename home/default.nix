@@ -103,7 +103,7 @@ in {
               jinja2
             ])))
     ]
-    ++ (lib.optionals (!config.local.headless) [
+    ++ (lib.optionals (!config.local.headless && !isDarwin) [
       wl-clipboard # clipboard operations on wayland
     ])
     ++ (lib.optionals isDarwin [
