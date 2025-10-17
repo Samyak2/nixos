@@ -83,10 +83,8 @@ keybinds {
         bind "n" { NewTab; SwitchToMode "normal"; }
         bind "x" { CloseTab; }
         // bind "s" { ToggleActiveSyncTab; }
-        bind "Alt h" { MoveFocus "Left"; }
-        bind "Alt l" { MoveFocus "Right"; }
-        bind "Alt j" { MoveFocus "Down"; }
-        bind "Alt k" { MoveFocus "Up"; }
+        bind "Alt h" { MoveTab "Left"; }
+        bind "Alt l" { MoveTab "Right"; }
         bind "1" { GoToTab 1; }
         bind "2" { GoToTab 2; }
         bind "3" { GoToTab 3; }
