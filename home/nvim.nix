@@ -28,6 +28,7 @@
           efm-langserver # generic server for linters, formatters, etc.
           nil # nix language server
           lua-language-server # lua
+          stylua # formatter for lua
           basedpyright # python
           nodePackages.typescript-language-server # js/ts
           vscode-langservers-extracted # provides eslint, html, css, json, md
