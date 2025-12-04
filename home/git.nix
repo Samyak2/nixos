@@ -6,8 +6,6 @@
 }: {
   programs.git = {
     enable = true;
-    userName = "Samyak S Sarnayak";
-    userEmail = email;
 
     # sophos kills perf of nix git for some reason. so use system git while keep config from nix.
     package =
@@ -24,7 +22,11 @@
       "/.direnv"
     ];
 
-    extraConfig = {
+    settings = {
+      user = {
+        email = email;
+        name = "Samyak S Sarnayak";
+      };
       commit = {
         verbose = true;
       };
@@ -38,9 +40,14 @@
         defaultBranch = "main";
       };
     };
+  };
 
-    difftastic = {
-      enable = true;
+  programs.difftastic = {
+    enable = true;
+
+    git.enable = true;
+
+    options = {
       background = "dark";
       display = "side-by-side-show-both";
     };
