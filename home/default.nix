@@ -93,6 +93,7 @@ in {
 
       # programming language utils
       alejandra # nix formatter
+      lspmux # for sharing rust-analyzer across nvim sessions
 
       # languages
       (python312.withPackages
