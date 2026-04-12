@@ -24,11 +24,11 @@
     "firefox-csshacks": {
       "flake": false,
       "locked": {
-        "lastModified": 1768572660,
-        "narHash": "sha256-VlxdEeMqgRclKQqnKDhBXQ+19ce35ZFdC6SaKg2skUk=",
+        "lastModified": 1774892585,
+        "narHash": "sha256-TCbdj6ZedgPSDQWJWFBPzDlLdgRcnsby3DWNHxmQ+b4=",
         "owner": "MrOtherGuy",
         "repo": "firefox-csshacks",
-        "rev": "bcb85f04764802557fc1d1dff6f53461065e4893",
+        "rev": "d02c1a92fa86777f3ae52f19e0c338a67eabe908",
         "type": "github"
       },
       "original": {
@@ -120,11 +120,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1768598210,
-        "narHash": "sha256-kkgA32s/f4jaa4UG+2f8C225Qvclxnqs76mf8zvTVPg=",
+        "lastModified": 1775900011,
+        "narHash": "sha256-QUGu6CJYFQ5AWVV0n3/FsJyV+1/gj7HSDx68/SX9pwM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "c47b2cc64a629f8e075de52e4742de688f930dc6",
+        "rev": "b0569dc6ec1e6e7fefd8f6897184e4c191cd768e",
         "type": "github"
       },
       "original": {
@@ -190,11 +190,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1768569498,
-        "narHash": "sha256-bB6Nt99Cj8Nu5nIUq0GLmpiErIT5KFshMQJGMZwgqUo=",
+        "lastModified": 1775888245,
+        "narHash": "sha256-nwASzrRDD1JBEu/o8ekKYEXm/oJW6EMCzCRdrwcLe90=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "be5afa0fcb31f0a96bf9ecba05a516c66fcd8114",
+        "rev": "13043924aaa7375ce482ebe2494338e058282925",
         "type": "github"
       },
       "original": {
@@ -254,11 +254,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1768564909,
-        "narHash": "sha256-Kell/SpJYVkHWMvnhqJz/8DqQg2b6PguxVWOuadbHCc=",
+        "lastModified": 1775710090,
+        "narHash": "sha256-ar3rofg+awPB8QXDaFJhJ2jJhu+KqN/PRCXeyuXR76E=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "e4bae1bd10c9c57b2cf517953ab70060a828ee6f",
+        "rev": "4c1018dae018162ec878d42fec712642d214fdfa",
         "type": "github"
       },
       "original": {
@@ -270,11 +270,11 @@
     },
     "nixpkgs_6": {
       "locked": {
-        "lastModified": 1768564909,
-        "narHash": "sha256-Kell/SpJYVkHWMvnhqJz/8DqQg2b6PguxVWOuadbHCc=",
+        "lastModified": 1775710090,
+        "narHash": "sha256-ar3rofg+awPB8QXDaFJhJ2jJhu+KqN/PRCXeyuXR76E=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "e4bae1bd10c9c57b2cf517953ab70060a828ee6f",
+        "rev": "4c1018dae018162ec878d42fec712642d214fdfa",
         "type": "github"
       },
       "original": {
@@ -290,11 +290,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1768649395,
-        "narHash": "sha256-R/qhObJTSTpLRkLigsLPRckJ74BbkziuGBvfDZsng7Y=",
+        "lastModified": 1775977143,
+        "narHash": "sha256-P3oLHfzHvBjyv+I3OAAZS7DekkjIubrSsHTo2HVdPr8=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "c61d571d7fa4417c125306aee0fa4306cccfdd18",
+        "rev": "1bf8e670a4df29767badbe55999854dbceb9aa6a",
         "type": "github"
       },
       "original": {
@@ -306,11 +306,11 @@
     "nvim-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1767792749,
-        "narHash": "sha256-devwlsUdKL5qf3AF0eB2/Gr1HPUQw9Bx6HPBSv04noA=",
+        "lastModified": 1772025878,
+        "narHash": "sha256-JVUH/CCpmBJgfPk5pjbuA0UW+/wx6f5PuYqCi50OArk=",
         "owner": "Samyak2",
         "repo": "nvim-config",
-        "rev": "214747358837d01430fa72c98f5fc2a242a19bbf",
+        "rev": "27a4ada7575f8212eab5053847071f0e4e9f2a58",
         "type": "github"
       },
       "original": {
@@ -329,11 +329,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1767662275,
-        "narHash": "sha256-d5Q1GmQ+sW1Bt8cgDE0vOihzLaswsm8cSdg8124EqXE=",
+        "lastModified": 1775856943,
+        "narHash": "sha256-b7Mp7P+q2Md5AGt4rjHfMcBykzMumFTen10ST++AuTU=",
         "owner": "pjones",
         "repo": "plasma-manager",
-        "rev": "51816be33a1ff0d4b22427de83222d5bfa96d30e",
+        "rev": "a524a6160e6df89f7673ba293cf7d78b559eb1a5",
         "type": "github"
       },
       "original": {
