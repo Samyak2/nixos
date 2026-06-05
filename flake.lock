@@ -306,11 +306,11 @@
     "nvim-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1778438000,
-        "narHash": "sha256-KCi4DoVMQvOOVGEgmCFFkYppSnz4qUKLWZ0pVtg7A6o=",
+        "lastModified": 1780658807,
+        "narHash": "sha256-pP6jAETnlvz3Isk0LAm/a4APkUmQjdcMa172k9z+XOc=",
         "owner": "Samyak2",
         "repo": "nvim-config",
-        "rev": "52a7acf9a62b3d07acc574f754c007d9f5b47ca4",
+        "rev": "db7616017816bc543ee5353e2cf7ab6fbc659ddd",
         "type": "github"
       },
       "original": {
