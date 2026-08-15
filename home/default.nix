@@ -79,6 +79,7 @@ in {
       # for signing git commits
       gnupg
 
+      tree
       fd # nicer find
       ripgrep # recursively searches directories for a regex pattern
       jq # A lightweight and flexible command-line JSON processor
