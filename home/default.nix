@@ -6,7 +6,7 @@
   config,
   ...
 }: let
-  inherit (pkgs-unstable.stdenv) isDarwin;
+  inherit (pkgs-unstable.stdenv.hostPlatform) isDarwin;
 in {
   imports =
     [
