@@ -41,7 +41,7 @@
           vscode-extensions.vadimcn.vscode-lldb.adapter
 
           # required for iamcco/markdown-preview.nvim and copilot
-          nodejs_22
+          nodejs_24
         ]
         ++ lib.optionals (config.local.java) [jdt-language-server];
     };
