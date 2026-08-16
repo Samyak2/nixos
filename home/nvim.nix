@@ -36,6 +36,7 @@
           typescript-language-server # js/ts
           vscode-langservers-extracted # provides eslint, html, css, json, md
           taplo # TOML toolkit
+          astro-language-server # for personal website
 
           # debugger for rust/c/c++
           vscode-extensions.vadimcn.vscode-lldb.adapter
