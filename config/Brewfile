@@ -1,0 +1,8 @@
+# agents
+cask 'codex' # gpteee
+cask 'antigravity-cli' # googil
+
+# gui apps
+cask 'betterdisplay' # usable external monitors
+cask 'ghostty' # best terminal
+cask 'kopiaui' # backup tool
