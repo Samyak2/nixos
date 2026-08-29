@@ -44,6 +44,7 @@ in {
       {nixpkgs.overlays = [inputs.nur.overlays.default];}
 
       ./direnv.nix
+      ./kache.nix
       ./gh.nix
       ./git.nix
       ./java.nix
